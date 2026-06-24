@@ -103,9 +103,9 @@
 
   /* dual funnel cards */
   .funnels{padding:80px 0}
-  .fgrid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .fgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
   @media(max-width:860px){.fgrid{grid-template-columns:1fr}}
-  .fcard{position:relative;overflow:hidden;border-radius:24px;padding:40px;border:1px solid var(--card-line);background:var(--card);display:flex;flex-direction:column}
+  .fcard{position:relative;min-width:0;overflow:hidden;border-radius:24px;padding:40px;border:1px solid var(--card-line);background:var(--card);display:flex;flex-direction:column}
   .fcard.guest{background:linear-gradient(150deg,#241066,#1b1340)}
   .fcard.sponsor{background:linear-gradient(150deg,#3a1248,#1b1340)}
   .fcard .eyebrow{font-weight:800;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--g1)}
