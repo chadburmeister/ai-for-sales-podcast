@@ -100,8 +100,11 @@
   .walls{background:var(--indigo);padding:70px 0}
   .wallblock+.wallblock{margin-top:46px}
   .wallblock .lead{text-align:center;font-weight:800;letter-spacing:.06em;text-transform:uppercase;font-size:13px;color:var(--muted-2);margin-bottom:26px}
-  .logos{display:flex;justify-content:center;align-items:center;gap:38px;flex-wrap:wrap}
-  .logos .lg{font-family:var(--display);font-weight:600;font-size:22px;color:#fff;opacity:.85}
+  .logos{display:flex;justify-content:center;align-items:center;gap:20px;flex-wrap:wrap}
+  .logochip{background:#fff;border-radius:14px;height:76px;min-width:150px;padding:0 30px;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 22px rgba(0,0,0,.22)}
+  .logochip img{max-height:40px;max-width:150px;width:auto;object-fit:contain;display:block}
+  .logochip.add{background:transparent;border:1.5px dashed var(--card-line);color:var(--muted);font-weight:800;font-size:13.5px;letter-spacing:.04em;text-transform:uppercase}
+  .logochip.add:hover{border-color:var(--g1);color:#fff}
   .guestrow{display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
   .guestrow .guest{display:flex;flex-direction:column;align-items:center;gap:10px;width:140px}
   .guestrow .guest .av{width:84px;height:84px;border-radius:50%;background:linear-gradient(135deg,#3a2a7a,#5a3fae);display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:22px;color:#fff;border:2px solid var(--card-line);object-fit:cover}
@@ -234,7 +237,10 @@
     <div class="wallblock">
       <p class="lead">Trusted by the brands building AI for sales</p>
       <div class="logos">
-        <span class="lg">ZoomInfo</span><span class="lg">Nooks</span><span class="lg">BDR.ai</span><span class="lg">+ your brand</span>
+        <span class="logochip"><img src="images/ZoomInfoLogo.png" alt="ZoomInfo"></span>
+        <span class="logochip"><img src="images/NooksLogo.webp" alt="Nooks"></span>
+        <span class="logochip"><img src="images/BDRaiLogo.webp" alt="BDR.ai"></span>
+        <a class="logochip add" href="become-a-sponsor.html">+ Your brand</a>
       </div>
     </div>
     <div class="wallblock">
