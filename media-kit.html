@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Media Kit — The AI for Sales Podcast</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2048%2048'%3E%3Crect%20width='48'%20height='48'%20rx='12'%20fill='%230e1525'/%3E%3Ccircle%20cx='24'%20cy='24'%20r='9'%20fill='%23f0354e'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16242f;--muted:#55566f;--faint:#8a8aa3;--line:#e6e6f0;--paper:#f6f6fc;
+    --indigo:#241066;--coral:#f0354e;--g1:#e94fa0;--g2:#7a3fe6;
+    --grad:linear-gradient(90deg,var(--g1),var(--g2));
+    --display:'Hanken Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    --body:'Hanken Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;--max:980px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--body);background:#eef0f6;color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  h1,h2,h3,h4{font-family:var(--display);letter-spacing:-.01em;line-height:1.1}
+  .grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .coral{color:var(--coral)}
+  p{color:var(--muted)}
+
+  /* top bar (screen only) */
+  .topbar{position:sticky;top:0;z-index:10;background:#0e1525;color:#fff}
+  .topbar .in{max-width:var(--max);margin:0 auto;padding:14px 26px;display:flex;align-items:center;justify-content:space-between}
+  .topbar .brand{font-family:var(--display);font-weight:700;font-size:18px}
+  .topbar .brand .dot{color:var(--coral)}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:14px;padding:11px 20px;border-radius:999px;border:none;cursor:pointer;color:#fff;background:var(--grad);box-shadow:0 8px 22px rgba(122,63,230,.4)}
+  .btn:hover{transform:translateY(-1px)}
+  .btn-2{background:#fff;color:var(--indigo)}
+
+  /* sheet */
+  .sheet{max-width:var(--max);margin:24px auto;background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 20px 60px rgba(16,36,47,.12)}
+  .pad{padding:44px 52px}
+  @media(max-width:620px){.pad{padding:32px 26px}}
+
+  /* masthead */
+  .mast{background:#0e1525;color:#fff;position:relative;overflow:hidden}
+  .mast::after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-120px;top:-160px;background:radial-gradient(circle,rgba(122,63,230,.5),transparent 65%)}
+  .mast .pad{position:relative;z-index:1}
+  .eyebrow{display:inline-block;font-weight:800;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);padding:7px 14px;border-radius:999px}
+  .mast h1{font-size:clamp(30px,4.6vw,46px);font-weight:700;margin:16px 0 6px}
+  .mast .tag{font-family:var(--display);font-weight:700;font-size:18px;color:#fff}
+  .mast .tag .coral{color:#ff6678}
+  .mast .powered{margin-top:22px;font-size:12.5px;color:#a9a6d6;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+  .mast .logos{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:12px}
+  .mast .logos .chip{background:#fff;border-radius:10px;height:48px;padding:0 18px;display:flex;align-items:center}
+  .mast .logos .chip img{max-height:26px;max-width:110px;width:auto;object-fit:contain;display:block}
+  .award{display:inline-flex;align-items:center;gap:11px;margin-top:22px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:7px 18px 7px 7px}
+  .award img{height:46px;width:auto;border-radius:7px;display:block}
+  .award span{font-size:12.5px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:#fff}
+  .award span small{display:block;font-weight:700;color:#a9a6d6;font-size:11px;text-transform:none;letter-spacing:.02em;margin-top:2px}
+
+  .sec-label{font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--g2)}
+  h2{font-size:24px;font-weight:700;margin:6px 0 14px}
+  hr{border:none;border-top:1px solid var(--line)}
+
+  /* reach stats */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  @media(max-width:620px){.stats{grid-template-columns:repeat(2,1fr)}}
+  .stat{text-align:center;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:22px 12px}
+  .stat .n{font-family:var(--display);font-weight:700;font-size:30px;line-height:1}
+  .stat .l{font-size:12.5px;color:var(--muted);margin-top:6px}
+
+  /* host */
+  .host{display:flex;gap:22px;align-items:center}
+  .host img{width:96px;height:96px;border-radius:16px;object-fit:cover;object-position:center top;flex:0 0 auto}
+  .host h3{font-size:18px;font-weight:700}
+  .host p{font-size:14.5px;margin-top:4px}
+
+  /* audience chips */
+  .aud{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+  .aud span{font-size:13.5px;font-weight:700;color:var(--indigo);background:#efeafc;border-radius:999px;padding:7px 14px}
+
+  /* benefits */
+  .bgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px 26px}
+  @media(max-width:620px){.bgrid{grid-template-columns:1fr}}
+  .bgrid li{list-style:none;position:relative;padding-left:26px;font-size:14.5px;color:var(--muted);margin:8px 0}
+  .bgrid li b{color:var(--ink)}
+  .bgrid li svg{position:absolute;left:0;top:3px}
+
+  /* tiers */
+  .tiers{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:620px){.tiers{grid-template-columns:1fr}}
+  .tier{border:1px solid var(--line);border-radius:16px;padding:24px}
+  .tier.feat{border:2px solid var(--g2)}
+  .tier .tn{font-size:12.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--g2)}
+  .tier .pr{font-family:var(--display);font-weight:700;font-size:34px;margin:4px 0}
+  .tier .pr span{font-size:14px;color:var(--faint);font-weight:700}
+  .tier ul{list-style:none;margin-top:12px}
+  .tier li{position:relative;padding-left:22px;font-size:13.5px;color:var(--muted);margin:7px 0}
+  .tier li::before{content:"";position:absolute;left:0;top:7px;width:11px;height:11px;border-radius:3px;background:#efeafc;box-shadow:inset 0 0 0 1.5px var(--g2)}
+
+  /* guests */
+  .guests{display:flex;gap:16px;flex-wrap:wrap}
+  .guests .g{display:flex;flex-direction:column;align-items:center;gap:8px;width:120px}
+  .guests .g img{width:64px;height:64px;border-radius:50%;object-fit:cover;border:2px solid var(--line)}
+  .guests .g .nm{font-size:11.5px;color:var(--muted);text-align:center;line-height:1.3}
+  .guests .g .nm b{display:block;color:var(--ink);font-size:12.5px}
+
+  /* contact */
+  .contact{background:var(--indigo);color:#fff;border-radius:16px;padding:30px 32px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+  .contact h3{font-size:22px;font-weight:700;color:#fff}
+  .contact a.mail{font-family:var(--display);font-weight:700;font-size:20px;color:#fff}
+  .footnote{max-width:var(--max);margin:0 auto 40px;padding:0 26px;font-size:12px;color:var(--faint);text-align:center}
+
+  @media print{
+    body{background:#fff}
+    .topbar,.noprint{display:none!important}
+    .sheet{box-shadow:none;margin:0;border-radius:0;max-width:none}
+    .pad{padding:24px 30px}
+    @page{margin:12mm}
+  }
+</style>
+</head>
+<body>
+
+<!-- top bar (screen only) -->
+<div class="topbar noprint">
+  <div class="in">
+    <a class="brand" href="index.html">The AI for Sales Podcast<span class="dot">.</span></a>
+    <button class="btn" onclick="window.print()">⬇ Download PDF</button>
+  </div>
+</div>
+
+<div class="sheet">
+  <!-- MASTHEAD -->
+  <div class="mast">
+    <div class="pad">
+      <span class="eyebrow">Sponsor Media Kit · 2026</span>
+      <h1>The AI for Sales Podcast</h1>
+      <div class="tag"><span class="coral">Time kills deals.</span> AI kills time.</div>
+      <div class="award">
+        <img src="images/AIforSalesAward.png" alt="Ranked #2 Podcast for AI for Sales">
+        <span>Ranked #2<small>Podcast for AI for Sales</small></span>
+      </div>
+      <div class="powered">Powered by</div>
+      <div class="logos">
+        <span class="chip"><img src="images/ZoomInfoLogo.png" alt="ZoomInfo"></span>
+        <span class="chip"><img src="images/NooksLogo.webp" alt="Nooks"></span>
+        <span class="chip"><img src="images/BDRaiLogo2.jpeg" alt="BDR.ai"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- THE SHOW + HOST -->
+  <div class="pad">
+    <div class="sec-label">The show</div>
+    <h2>Where AI meets the future of selling</h2>
+    <p>The AI for Sales Podcast is where sales leaders, RevOps teams, and founders learn how AI is changing the way we prospect, engage, and close. A LinkedIn-first show that now publishes <b style="color:var(--ink)">two new episodes every week</b> — bringing the operators actually building AI-powered selling onto the mic.</p>
+    <div style="height:24px"></div>
+    <div class="host">
+      <img src="images/BurmeisterPic.JPG" alt="Chad Burmeister">
+      <div>
+        <h3>Hosted by Chad Burmeister</h3>
+        <p>Best-selling author, speaker, and sales innovator who has spent his career at the front lines of outbound and AI-powered selling.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- AUDIENCE + REACH -->
+  <div class="pad">
+    <div class="sec-label">The audience</div>
+    <h2>An engaged, hard-to-reach B2B audience</h2>
+    <div class="aud">
+      <span>Sales leaders &amp; CROs</span><span>RevOps</span><span>Founders &amp; CEOs</span><span>SDR / BDR leaders</span><span>AI &amp; GTM builders</span>
+    </div>
+    <div style="height:22px"></div>
+    <div class="stats">
+      <div class="stat"><div class="n grad">2,500+</div><div class="l">downloads &amp; views / month</div></div>
+      <div class="stat"><div class="n grad">4,000+</div><div class="l">newsletter subscribers</div></div>
+      <div class="stat"><div class="n grad">30,000+</div><div class="l">LinkedIn following</div></div>
+      <div class="stat"><div class="n grad">2×</div><div class="l">new episodes / week</div></div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- WHAT SPONSORS GET -->
+  <div class="pad">
+    <div class="sec-label">What sponsors get</div>
+    <h2>Exposure across every channel we run</h2>
+    <ul class="bgrid">
+      <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7a3fe6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><b>Ad reads</b> woven into episodes</li>
+      <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7a3fe6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><b>Newsletter mentions</b> to 4,000+ subscribers</li>
+      <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7a3fe6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><b>Social shout-outs</b> across our channels</li>
+      <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7a3fe6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><b>Logo</b> on the website &amp; cover art</li>
+      <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7a3fe6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><b>Guest appearances</b> for your experts</li>
+      <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7a3fe6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><b>Category exclusivity</b> (Partner tier)</li>
+      <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7a3fe6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><b>Branded clips</b> to reuse on your channels</li>
+      <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7a3fe6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><b>Promo codes</b> + quarterly performance report</li>
+    </ul>
+  </div>
+
+  <hr>
+
+  <!-- TIERS -->
+  <div class="pad">
+    <div class="sec-label">Sponsorship tiers</div>
+    <h2>Annual partnerships</h2>
+    <div class="tiers">
+      <div class="tier">
+        <div class="tn">Supporter</div>
+        <div class="pr">$4,999<span> /yr</span></div>
+        <ul>
+          <li>Logo + link on the website</li>
+          <li>Ad read in select episodes</li>
+          <li>2 guest appearances / year</li>
+          <li>Quarterly social + newsletter mentions</li>
+        </ul>
+      </div>
+      <div class="tier feat">
+        <div class="tn">Partner · Best value</div>
+        <div class="pr">$9,999<span> /yr</span></div>
+        <ul>
+          <li>Everything in Supporter, plus:</li>
+          <li>Category exclusivity + logo on cover art</li>
+          <li>Ad read in every episode</li>
+          <li>A dedicated branded episode</li>
+          <li>4 guest appearances + monthly newsletter</li>
+          <li>Branded clips + quarterly performance report</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- RECENT GUESTS -->
+  <div class="pad">
+    <div class="sec-label">Recent guests</div>
+    <h2>The caliber of voice on the show</h2>
+    <div class="guests">
+      <div class="g"><img src="images/JoshHill.jpeg" alt="Josh Hill"><div class="nm"><b>Josh Hill</b>VP of HR, Tier 11</div></div>
+      <div class="g"><img src="images/MarkWalker.jpeg" alt="Mark Walker"><div class="nm"><b>Mark Walker</b>CEO, Nue</div></div>
+      <div class="g"><img src="images/TalPeretz.jpeg" alt="Tal Peretz"><div class="nm"><b>Tal Peretz</b>CEO, Onfire.ai</div></div>
+      <div class="g"><img src="images/SteveBrown.jpeg" alt="Steve Brown"><div class="nm"><b>Steve Brown</b>Jump Partners</div></div>
+      <div class="g"><img src="images/KrisBillmaier.jpeg" alt="Kris Billmaier"><div class="nm"><b>Kris Billmaier</b>Salesforce Agentforce</div></div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="pad">
+    <div class="contact">
+      <div>
+        <h3>Let's build a partnership.</h3>
+        <p style="color:#c9c4ee;margin-top:4px">Custom packages available — tell us your goals.</p>
+      </div>
+      <a class="mail" href="mailto:chad@sdr.ai">chad@sdr.ai</a>
+    </div>
+  </div>
+</div>
+
+<p class="footnote">The AI for Sales Podcast · theaiforsalespodcast.com · Figures reflect current reach and are provided for sponsorship planning.</p>
+
+</body>
+</html>
