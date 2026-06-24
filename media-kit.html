@@ -107,14 +107,28 @@
   .contact h3{font-size:22px;font-weight:700;color:#fff}
   .contact a.mail{font-family:var(--display);font-weight:700;font-size:20px;color:#fff}
   .footnote{max-width:var(--max);margin:0 auto 40px;padding:0 26px;font-size:12px;color:var(--faint);text-align:center}
+  .sp{height:22px}
 
   @media print{
     *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important}
     body{background:#fff}
     .topbar,.noprint{display:none!important}
     .sheet{box-shadow:none;margin:0;border-radius:0;max-width:none}
-    .pad{padding:22px 34px}
-    @page{margin:10mm}
+    @page{margin:8mm}
+    /* tighten to fit 2 pages */
+    .pad{padding:13px 34px}
+    .mast .pad{padding:22px 34px}
+    .mast h1{font-size:30px;margin:8px 0 4px}
+    .mast .award{margin-top:14px}.mast .powered{margin-top:14px}
+    h2{font-size:20px;margin:4px 0 9px}
+    .sp{height:6px}
+    hr{margin:0}
+    .stat{padding:13px 10px}.stat .n{font-size:25px}
+    .host img{width:78px;height:78px}
+    .bgrid li{margin:5px 0;font-size:13.5px}
+    .tier{padding:16px 18px}.tier .pr{font-size:30px}.tier li{margin:5px 0;font-size:13px}
+    .guests .g img{width:54px;height:54px}
+    .contact{padding:20px 26px}
     /* keep blocks from splitting across pages */
     .mast,.stats,.stat,.host,.bgrid,.tiers,.tier,.guests,.guests .g,.contact{break-inside:avoid;page-break-inside:avoid}
     .sec-label,h2,h3{break-after:avoid;page-break-after:avoid}
@@ -156,7 +170,7 @@
     <div class="sec-label">The show</div>
     <h2>Where AI meets the future of selling</h2>
     <p>The AI for Sales Podcast is where sales leaders, RevOps teams, and founders learn how AI is changing the way we prospect, engage, and close. A LinkedIn-first show that now publishes <b style="color:var(--ink)">two new episodes every week</b> — bringing the operators actually building AI-powered selling onto the mic.</p>
-    <div style="height:24px"></div>
+    <div class="sp"></div>
     <div class="host">
       <img src="images/BurmeisterPic.JPG" alt="Chad Burmeister">
       <div>
@@ -175,7 +189,7 @@
     <div class="aud">
       <span>Sales leaders &amp; CROs</span><span>RevOps</span><span>Founders &amp; CEOs</span><span>SDR / BDR leaders</span><span>AI &amp; GTM builders</span>
     </div>
-    <div style="height:22px"></div>
+    <div class="sp"></div>
     <div class="stats">
       <div class="stat"><div class="n grad">2,500+</div><div class="l">downloads &amp; views / month</div></div>
       <div class="stat"><div class="n grad">4,000+</div><div class="l">newsletter subscribers</div></div>
