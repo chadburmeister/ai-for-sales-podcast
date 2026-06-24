@@ -35,6 +35,8 @@
   .btn-grad:hover{transform:translateY(-2px);box-shadow:0 16px 38px rgba(122,63,230,.55)}
   .btn-ghost{background:transparent;border:2px solid rgba(255,255,255,.25);color:#fff}
   .btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.06)}
+  .btn-li{background:#0A66C2;color:#fff;box-shadow:0 10px 30px rgba(10,102,194,.45)}
+  .btn-li:hover{background:#08518f;transform:translateY(-2px);box-shadow:0 16px 38px rgba(10,102,194,.55)}
   .btn-sm{padding:11px 22px;font-size:14px}
 
   header{position:sticky;top:0;z-index:50;background:rgba(14,21,37,.9);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.06)}
@@ -280,15 +282,14 @@
 <section class="news">
   <div class="wrap">
     <div class="box">
-      <span class="lm">Free playbook</span>
-      <h2>Get the AI for Sales Playbook</h2>
-      <p>Join the weekend newsletter and get our roundup of the AI tools and plays top sales teams are using right now.</p>
-      <!-- wire this form to your email tool (Mailchimp/Beehiiv/etc.) -->
-      <form onsubmit="event.preventDefault(); this.querySelector('.fine').textContent='Thanks! Connect this form to your email tool to start collecting subscribers.';">
-        <input type="email" placeholder="you@company.com" required>
-        <button type="submit" class="btn btn-grad">Send me the playbook</button>
-        <p class="fine">No spam. Unsubscribe anytime.</p>
-      </form>
+      <span class="lm">LinkedIn newsletter · 4,000+ subscribers</span>
+      <h2>Subscribe to the AI for Sales Podcast on LinkedIn</h2>
+      <p>The weekend edition — the AI tools, plays, and guest takeaways top sales teams are using right now, straight to your LinkedIn feed.</p>
+      <a class="btn btn-li" href="https://www.linkedin.com/newsletters/the-ai-for-sales-podcast-7052983654347591680/" target="_blank" rel="noopener" style="margin-top:24px">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+        Subscribe on LinkedIn
+      </a>
+      <p class="fine">New issue every weekend. Unsubscribe anytime.</p>
     </div>
   </div>
 </section>
