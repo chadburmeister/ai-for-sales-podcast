@@ -1,12 +1,12 @@
 # The AI for Sales Podcast
 
-> The AI for Sales Podcast, hosted by best-selling author and sales innovator Chad Burmeister, covers how revenue teams use artificial intelligence to sell more in less time: AI SDRs, prospecting automation, pipeline generation, and go-to-market strategy. Tagline: "In sales, time kills deals. In AI for Sales, AI kills time." New episodes twice a week. Ranked #2 podcast for AI for Sales.
+> The AI for Sales Podcast, hosted by best-selling author and sales innovator Chad Burmeister, covers how revenue teams use artificial intelligence to sell more in less time: AI SDRs, prospecting automation, pipeline generation, and go-to-market strategy. Tagline: "In sales, time kills deals. In AI for Sales, AI kills time." New episodes every Saturday. Ranked #2 podcast for AI for Sales.
 
 ## Key facts
 
 - Host: Chad Burmeister — best-selling author, keynote speaker, and founder (BDR.ai / SDR.ai). Personal site: https://www.chadburmeister.com/
 - Format: interview podcast with operators and executives building AI for sales (recent guests from Salesforce Agentforce, Nooks, ZoomInfo, Nue, Onfire.ai)
-- Cadence: 2 new episodes per week
+- Cadence: 1 new episode per week, published Saturdays
 - Audience: B2B sales leaders, SDR/BDR teams, revenue operations
 - Sponsors/partners: BDR.ai, Nooks.ai, ZoomInfo
 - Contact: chad@sdr.ai
